@@ -1,0 +1,113 @@
+@import 'App.scss';
+
+@keyframes arrowRight {
+  0% {
+    transform: translate(0, -50%);
+  }
+
+  50% {
+    transform: translate(-.25rem, -50%);
+  }
+
+  100% {
+    transform: translate(0, -50%);
+  }
+}
+
+@keyframes arrowLeft {
+  0% {
+    transform: translate(0, -50%);
+  }
+
+  50% {
+    transform: translate(.25rem, -50%);
+  }
+
+  100% {
+    transform: translate(0, -50%);
+  }
+}
+
+.location-card {
+  padding-bottom: 2rem;
+
+  .name {
+    padding-bottom: .25rem;
+    margin-bottom: 1.125rem;
+
+    &>h1 {
+      font-size: 1.5rem;
+      padding-left: 0.5rem;
+      transform: scale();
+
+      @media screen and (min-width:$window-width-phone) {
+        font-size: 1.75rem;
+      }
+
+      @media screen and (min-width:$window-width-pad) {
+        font-size: 2rem;
+      }
+    }
+
+    .link {
+      height: 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-top: .25rem;
+      background: linear-gradient(90deg, $color-3, $white);
+      border-radius: 1rem;
+    }
+
+    .address {
+      font-size: .75rem;
+      font-weight: 300;
+      color: $color-3;
+      transition-duration: .3s;
+
+      &:hover {
+        color: $color-2;
+      }
+    }
+  }
+}
+
+
+.times {
+  position: relative;
+
+  .times_card {
+    display: flex;
+    overflow: hidden;
+  }
+
+  .scroll-button {
+    %scroll-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: $color-3;
+      cursor: pointer;
+    }
+
+    .scroll-button_left {
+      @extend %scroll-button;
+      left: 0;
+
+      &:hover {
+        animation: arrowLeft 1s infinite;
+      }
+    }
+
+    .scroll-button_right {
+      @extend %scroll-button;
+      right: 0;
+
+      &:hover {
+        animation: arrowRight 1s infinite;
+      }
+    }
+  }
+}

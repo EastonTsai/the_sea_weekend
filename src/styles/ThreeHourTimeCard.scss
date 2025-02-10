@@ -1,0 +1,35 @@
+@import 'App.scss';
+
+.three-hour-time-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include p-y(.5rem);
+
+  @media screen and (max-width:$window-width-phone) {
+    &:not(:last-of-type) {
+      border-bottom: solid 1px $color-3;
+    }
+  }
+
+  &:hover {
+    background-color: $color-4;
+    color: $color-1;
+    font-weight: bold;
+    transition-duration: .2s;
+  }
+
+  &>div {
+    width: calc(100%/6);
+    text-align: center;
+  }
+
+  .date>div {
+    @include p-y(.125rem)
+  }
+
+  .data-wind>div {
+    @include p-y(.125rem)
+  }
+
+}

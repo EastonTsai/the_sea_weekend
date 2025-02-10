@@ -1,0 +1,55 @@
+@import 'App.scss';
+
+.home-page {
+  height: 100vh;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-page_main {
+  flex-grow: 1;
+  overflow-y: scroll;
+  @extend %hidden-scroll;
+  padding-top: 1rem;
+}
+
+.home-page_main_banner {
+  >img {
+    width: 100%;
+  }
+}
+
+.home-page_main_location {
+  padding-top: 1rem;
+}
+
+.view-color {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  gap: 1rem;
+
+  &>div {
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+    border-radius: 50%;
+  }
+
+  .color-1 {
+    background: $color-1;
+  }
+
+  .color-2 {
+    background: $color-2;
+  }
+
+  .color-3 {
+    background: $color-3;
+  }
+
+  .color-4 {
+    background: $color-4;
+  }
+}

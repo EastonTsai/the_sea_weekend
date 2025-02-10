@@ -1,0 +1,50 @@
+@import 'App.scss';
+
+.time-card {
+  flex-shrink: 0;
+  width: 50%;
+  transition-duration: .5s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: .5rem;
+
+  @include p-y(.5rem);
+
+  @media screen and (min-width:$window-width-phone) {
+    width: 33.333%;
+  }
+
+  @media screen and (min-width:$window-width-pad) {
+    width: 25%;
+  }
+
+  @media screen and (min-width:$window-width-desktop) {
+    width: 20%;
+  }
+
+  .weekend {
+    color: $color-1;
+  }
+
+  .date {
+    display: flex;
+    column-gap: .5rem;
+    font-family: 'DGO';
+  }
+
+  .temperature {
+    display: flex;
+    column-gap: .25rem;
+    font-weight: bold;
+    font-size: 1.125rem;
+
+    .min {
+      color: $color-2
+    }
+
+    .max {
+      color: $color-1
+    }
+  }
+}

@@ -1,0 +1,59 @@
+@import 'styles/reset200802.css';
+$black: black;
+$white: white;
+$color-1: #cc7710;
+$color-2: #0761b7;
+$color-3: #0089dc;
+$color-4: #e5e5e3;
+
+.black {
+  $black: #ccc;
+  $white: #333;
+  $color-1: #262a33;
+  $color-2: #3d3441;
+  $color-3: #44a7a6;
+  $color-4: #69d4d0;
+}
+
+$window-width-phone: 400px;
+$window-width-pad: 960px;
+$window-width-desktop: 1280px;
+
+.container {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+@font-face {
+  font-family: 'NotoSansTC';
+  src: url('./files/NotoSansTC-VariableFont_wght.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DGO';
+  src: url('./files/DelaGothicOne-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.App {
+  font-family: 'NotoSansTC';
+}
+
+@mixin p-y($rem) {
+  padding-top: $rem;
+  padding-bottom: $rem;
+}
+
+%hidden-scroll {
+  scrollbar-width: none; // FireFox
+  -ms-overflow-style: none; // IE & Edge
+
+  &::-webkit-scrollbar {
+    // Chrome & Safari
+    display: none;
+  }
+}

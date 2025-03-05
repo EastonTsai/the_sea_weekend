@@ -1,14 +1,15 @@
-import 'styles/ThreeHoursOfLocation.scss'
+import 'styles/ThreeHoursOfLocationPage.scss'
 import Header from 'components/Header'
 import ThreeHourTimeCard from 'components/ThreeHourTimeCard'
 import { Link, useLocation } from 'react-router-dom'
+import Footer from 'components/Footer'
 
-const ThreeHoursOfLocation = () => {
+const ThreeHoursOfLocationPage = () => {
   const location = useLocation()
   const data = location.state
 
   return (
-    <div className="three-hours-of-location">
+    <div className="three-hours-of-location-page">
       <div className="header">
         <Header />
       </div>
@@ -21,7 +22,6 @@ const ThreeHoursOfLocation = () => {
         >
           {data.locationName}
         </Link>
-        {/* <div className="body_title"></div> */}
         <div className="body_item-list">
           <div>日期</div>
           <div>時間</div>
@@ -34,7 +34,8 @@ const ThreeHoursOfLocation = () => {
           {data.times.map((time: any) => <ThreeHourTimeCard key={time.startTime} data={time} />)}
         </div>
       </div>
+      <Footer />
     </div>
   )
 }
-export default ThreeHoursOfLocation
+export default ThreeHoursOfLocationPage

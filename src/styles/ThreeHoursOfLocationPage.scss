@@ -1,10 +1,7 @@
 @import 'App.scss';
 
-.three-hours-of-location {
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+.three-hours-of-location-page {
+  @extend %header-wrap;
 }
 
 .body {

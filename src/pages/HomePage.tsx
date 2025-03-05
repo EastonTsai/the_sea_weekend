@@ -2,6 +2,7 @@ import 'styles/HomePage.scss';
 import { dive24HoursOfWeek, surf24HoursOfWeek } from "../axios/apiUrls";
 import { getHomePageData } from "../axios/axios";
 import Header from "components/Header";
+import Footer from 'components/Footer';
 import { useContext, useEffect, useState } from 'react';
 import LocationCard from 'components/LocationCard';
 import { MainContext } from 'context/MainContext';
@@ -47,7 +48,7 @@ const HomePage = () => {
         }
       }
     }
-  }, [mainContext.homePageState])
+  }, [])
 
   const callApi = async (apiUrl: string) => {
     const data = await getHomePageData(apiUrl)
@@ -83,12 +84,7 @@ const HomePage = () => {
           {locationData.map((data: any) => <LocationCard key={data.name} data={data} />)}
         </div>
       </div>
-      <div className="view-color">
-        <div className="color-1"></div>
-        <div className="color-2"></div>
-        <div className="color-3"></div>
-        <div className="color-4"></div>
-      </div>
+      <Footer />
     </div>
   )
 }

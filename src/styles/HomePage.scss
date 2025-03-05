@@ -1,10 +1,7 @@
 @import 'App.scss';
 
 .home-page {
-  height: 100vh;
-  overflow-y: hidden;
-  display: flex;
-  flex-direction: column;
+  @extend %header-wrap;
 }
 
 .home-page_main {
